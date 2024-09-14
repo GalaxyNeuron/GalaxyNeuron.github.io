@@ -56,16 +56,138 @@
     <link rel="stylesheet" href="assets/css/animate.css" />
     <link rel="stylesheet" href="assets/css/lineicons.css" />
     <link rel="stylesheet" href="assets/css/ud-styles.css" />
+
+    <script>
+
+
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+
+      window.onload = function(event){
+        var modal = document.getElementById("termsModal");
+      console.log(modal)
+
+      var btn = document.getElementById("download-btn");
+      console.log(btn)
+
+      var span = document.getElementsByClassName("close")[0];
+
+      var agreeButton = document.getElementById("agreeButton");
+      var installerButton = document.getElementById("installerButton");
+      var disagreeButton = document.getElementById("disagreeButton");
+
+      btn.onclick = function() {
+          modal.style.display = "block";
+      }
+
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
+
+      disagreeButton.onclick = function() {
+          modal.style.display = "none";
+      }
+
+      agreeButton.onclick = function() {
+          modal.style.display = "none";
+          window.location.href = "https://huggingface.co/spaces/deepakHonakeri5/instagramclassifier/resolve/main/celeste%20app.zip"; 
+      }
+
+      installerButton.onclick = function() {
+          modal.style.display = "none";
+          window.location.href = "path/to/your/download/file"; 
+      }
+      }
+  </script>
+      <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: relative; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-height: 80%; /* Limit height */
+            overflow-y: auto; /* Enable scroll if content is too long */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Button Styles */
+        #termsButton, #agreeButton, #disagreeButton, #installerButton {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #agreeButton, #installerButton {
+            background-color: #000000; /* Green */
+            color: white;
+            border: none;
+        }
+
+        #disagreeButton {
+            background-color: #FFFFFF; /* Red */
+            color: black;
+            border: none;
+        }
+    </style>
   </head>
   <body>
+
+    <div id="termsModal" class="modal">
+      <!-- Modal Content -->
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Terms and Conditions</h2>
+
+          <h2>Terms of use</h2>
+          
+          <button id="agreeButton">Agree & Download Full App</button>
+          <button id="installerButton">Agree & Download Chat App</button>
+          <button id="disagreeButton">Decline</button>
+      </div>
+  </div>
     <!-- ====== Header Start ====== -->
+        <!-- The Modal -->
+
     <header class="ud-header">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="index.html">
-                <span class="fw-bold text-white startup-logo"> Galaxy Neuron</span>
+                <span class="fw-bold text-white startup-logo"> Galaxy Neuron </span>
               </a>
               <button class="navbar-toggler">
                 <span class="toggler-icon"> </span>
@@ -112,11 +234,12 @@
                 Celeste
               </h1>
               <p class="ud-hero-desc">
-                Self-learning AI 
+                An AI that learns
               </p>
             <ul class="ud-hero-buttons">
                 <li>
-                  <a class="ud-main-btn ud-white-btn" href="#pricing">Download Celeste FREE</a>
+                  <button class="ud-main-btn ud-white-btn" id="download-btn">Download Celeste FREE</button>
+                  
                 </li>
               </ul>
               <ul>

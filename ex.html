@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions Popup</title>
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 5% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-height: 80%; /* Limit height */
+            overflow-y: auto; /* Enable scroll if content is too long */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Button Styles */
+        #termsButton, #agreeButton, #disagreeButton {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #agreeButton {
+            background-color: #000000; /* Green */
+            color: white;
+            border: none;
+        }
+
+        #disagreeButton {
+            background-color: #FFFFFF; /* Red */
+            color: black;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="termsButton">View Terms and Conditions</button>
+
+    <!-- The Modal -->
+    <div id="termsModal" class="modal">
+        <!-- Modal Content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Terms and Conditions</h2>
+            <p>
+                Welcome to our website. These terms and conditions outline the rules and regulations for the use of our website.
+            </p>
+            <p>
+                By accessing this website we assume you accept these terms and conditions. Do not continue to use our website if you do not agree to take all of the terms and conditions stated on this page.
+            </p>
+            <p>
+                <strong>License:</strong> Unless otherwise stated, we own the intellectual property rights for all material on our website. All intellectual property rights are reserved. You may view and/or print pages from our website for your own personal use subject to restrictions set in these terms and conditions.
+            </p>
+            <p>
+                <strong>Redistribution:</strong> You must not republish material from our website (including republication on another website); sell, rent or sub-license material from our website; show any material from our website in public; reproduce, duplicate, copy or otherwise exploit material on our website for a commercial purpose; edit or otherwise modify any material on our website.
+            </p>
+            <p>
+                If you have any questions about these Terms and Conditions, please contact us.
+            </p>
+            <h2>Terms of use</h2>
+            <p>
+                Welcome to our website. These terms and conditions outline the rules and regulations for the use of our website.
+            </p>
+            <p>
+                By accessing this website we assume you accept these terms and conditions. Do not continue to use our website if you do not agree to take all of the terms and conditions stated on this page.
+            </p>
+            <p>
+                <strong>License:</strong> Unless otherwise stated, we own the intellectual property rights for all material on our website. All intellectual property rights are reserved. You may view and/or print pages from our website for your own personal use subject to restrictions set in these terms and conditions.
+            </p>
+            <p>
+                <strong>Redistribution:</strong> You must not republish material from our website (including republication on another website); sell, rent or sub-license material from our website; show any material from our website in public; reproduce, duplicate, copy or otherwise exploit material on our website for a commercial purpose; edit or otherwise modify any material on our website.
+            </p>
+            <p>
+                If you have any questions about these Terms and Conditions, please contact us.
+            </p>
+            <button id="agreeButton">Agree & Download</button>
+            <button id="disagreeButton">Don't Agree</button>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("termsModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("termsButton");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Get the Agree and Disagree buttons
+        var agreeButton = document.getElementById("agreeButton");
+        var disagreeButton = document.getElementById("disagreeButton");
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks on the Disagree button, close the modal
+        disagreeButton.onclick = function() {
+            modal.style.display = "none";
+            // Optionally, you could add a redirect or other functionality here
+        }
+
+        // When the user clicks on the Agree button, close the modal and start download
+        agreeButton.onclick = function() {
+            modal.style.display = "none";
+            // Trigger download or redirect to download page
+            window.location.href = "path/to/your/download/file"; // Change this to your file URL
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
+        // Import the required libraries
+        const axios = require('axios');
+
+        // Define the endpoint to download the file
+        const endpoint = 'https://galaxyneuron5-my.sharepoint.com/:u:/g/personal/deepak_galaxy-neuron_com/EYHOC2pU_rpGoiBtHm4ATa4BOstYAvoV_8xAS3Yc7lbG2Q?e=8HgokNt';
+
+        // Replace {file-id} with the actual ID of the file you want to download
+
+        // Define the request options
+        const options = {
+            method: 'GET',
+            responseType: 'arraybuffer',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        // Make the request to download the file
+        axios(endpoint, options)
+            .then(function (response) {
+                // Handle the response
+                const fileData = response.data;
+
+                // Write the file to disk
+                const blob = new Blob([fileData], { type: 'application/octet-stream' });
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'filename.ext'; // Replace with the desired filename and extension
+                a.click();
+            })
+            .catch(function (error) {
+                // Handle the error
+                console.log(error);
+            });
+
+    </script>
+
+</body>
+</html>
