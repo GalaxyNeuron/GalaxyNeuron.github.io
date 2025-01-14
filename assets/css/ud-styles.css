@@ -6,7 +6,7 @@
   --font: "Inter", sans-serif;
   --body-color: #637381;
   --heading-color: #212b36;
-  --primary-color: #3056d3;
+  --primary-color: #2D0E3B;
   --white: #ffffff;
 }
 
@@ -502,7 +502,7 @@ p {
 
 /* ===== Hero CSS ===== */
 .ud-hero {
-  background: black;
+  background: var(--primary-color);
   padding-top: 180px;
 }
 
