@@ -502,7 +502,7 @@ p {
 
 /* ===== Hero CSS ===== */
 .ud-hero {
-  background: var(--primary-color);
+  background: black;
   padding-top: 180px;
 }
 
