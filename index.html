@@ -103,13 +103,6 @@
 
       agreeButton.onclick = function() {
           modal.style.display = "none";
-        
-          fetch("https://deepakHonakeri5-instagramclassifier.hf.space/dn", {
-            method: "GET"
-          }).catch(error => {
-            console.error("Request failed:", error);
-          });
-
           window.location.href = "https://huggingface.co/deepakHonakeri5/Phi-3.5-mini-finetuned/resolve/main/app.zip"; 
       }
 
